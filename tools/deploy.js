@@ -16,7 +16,7 @@ import fetch from './lib/fetch';
 const getRemote = (slot) => ({
   name: slot ? slot : 'production',
   url: `git@github.com:bbonny/guess-price-front-build.git`,
-  website: `http://guess-price${slot ? '-' + slot : ''}.herokuapp.com`,
+  website: `http://guess-price.herokuapp.com`,
 });
 
 /**
