@@ -1,0 +1,12 @@
+.SearchBox {
+  width: 100%;
+  margin-top: 100px;
+  input{
+    position: fixed;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    width: 40%;
+    min-width: 200px;
+  }
+}
