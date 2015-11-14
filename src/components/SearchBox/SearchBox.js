@@ -9,7 +9,7 @@ class SearchBox extends Component {
   render() {
     return (
       <div className="SearchBox">
-        <input type="text" placholder="Model" />
+        <input type="text" autofocus placholder="Model" />
       </div>
     );
   }

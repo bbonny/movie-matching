@@ -10,19 +10,13 @@ import SearchBox from '../SearchBox';
 @withContext
 @withStyles(styles)
 class App extends Component {
-
-  static propTypes = {
-    children: PropTypes.element.isRequired,
-    error: PropTypes.object,
-  };
-
   render() {
-    return !this.props.error ? (
+    return (
       <div>
         <Header />
         <SearchBox />
       </div>
-    ) : this.props.children;
+    )
   }
 
 }
