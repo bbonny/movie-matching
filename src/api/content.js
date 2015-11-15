@@ -6,6 +6,8 @@ import jade from 'jade';
 import fm from 'front-matter';
 import fs from '../utils/fs';
 
+import http from '../core/HttpClient';
+
 // A folder with Jade/Markdown/HTML content pages
 const CONTENT_DIR = join(__dirname, './content');
 
@@ -25,6 +27,12 @@ router.get('/', async (req, res, next) => {
     if (!path || path === 'undefined') {
       res.status(400).send({error: `The 'path' query parameter cannot be empty.`});
       return;
+    }
+
+    if (path == "ss") {
+      const q = req.query.q;
+      var content = await http.get(`http://www.senscritique.com/sc/search/autocomplete.json?query=${q}`);
+      res.status(200).send(content);
     }
 
     let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');
