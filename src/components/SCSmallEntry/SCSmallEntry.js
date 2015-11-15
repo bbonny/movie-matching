@@ -6,7 +6,9 @@ class SCSmallEntry extends Component {
   render() {
       return (
       <div>
-        <a href={this.props.result.url}>{this.props.result.label}</a>
+        <a href={this.props.result.url} target='_BLANK'>
+          {this.props.result.label} ({this.props.result.description})
+        </a>
       </div>
     )
   }
