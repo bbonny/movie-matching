@@ -12,7 +12,8 @@ import Link from '../Link';
 class SearchBox extends Component {
   static getInitialState() {
     return {
-      value: ''
+      value: '',
+      results: []
     };
   }
 
@@ -21,7 +22,7 @@ class SearchBox extends Component {
       `/api/content?path=ss&q=${q}`,
       (results) => {
         this.setState({
-          results: JSON.stringify(results)
+          results: results.json
         });
       }
     );
@@ -34,10 +35,18 @@ class SearchBox extends Component {
     });
   }
 
+  renderResults = (results) => {
+    var list = [];
+    results.forEach(result => {
+      list.push(<Row>{result.label}</Row>);
+    });
+    return list;
+  }
+
   render() {
     var results = '';
-    if (this.state) {
-      results = this.state.results;
+    if (this.state && this.state.results) {
+      results = this.renderResults(this.state.results);
     }
     return (
       <div className="SearchBox">
@@ -56,11 +65,11 @@ class SearchBox extends Component {
           <Col xs={3} md={4}></Col>
         </Row>
         <Row>
-          <Col xs={3} md={4}></Col>
-          <Col xs={6} md={4}>
+          <Col xs={4} md={5}></Col>
+          <Col xs={5} md={3}>
             {results}
           </Col>
-          <Col xs={3} md={4}></Col>
+          <Col xs={3} md={2}></Col>
         </Row>
       </div>
     );

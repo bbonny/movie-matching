@@ -31,8 +31,12 @@ router.get('/', async (req, res, next) => {
 
     if (path == "ss") {
       const q = req.query.q;
-      var content = await http.get(`http://www.senscritique.com/sc/search/autocomplete.json?query=${q}`);
+      const content = await http.get(
+        `http://www.senscritique.com/sc/search/autocomplete.json?query=${q}`,
+        {'X-Requested-With': 'XMLHttpRequest'}
+      );
       res.status(200).send(content);
+      return;
     }
 
     let fileName = join(CONTENT_DIR, (path === '/' ? '/index' : path) + '.jade');

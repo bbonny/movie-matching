@@ -15,10 +15,10 @@ function getUrl(path) {
 
 const HttpClient = {
 
-  get: path => new Promise((resolve, reject) => {
+  get: (path, headers={}) => new Promise((resolve, reject) => {
     request
       .get(getUrl(path))
-      .set('X-Requested-With', 'XMLHttpRequest')
+      .set(headers)
       .accept('application/json')
       .end((err, res) => {
         if (err) {
