@@ -7,6 +7,7 @@ import $ from 'jquery';
 import styles from './SearchBox.css';
 import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
+import SCSmallEntry from '../SCSmallEntry';
 
 @withStyles(styles)
 class SearchBox extends Component {
@@ -38,7 +39,7 @@ class SearchBox extends Component {
   renderResults = (results) => {
     var list = [];
     results.forEach(result => {
-      list.push(<Row>{result.label}</Row>);
+      list.push(<Row><SCSmallEntry result={result} /></Row>);
     });
     return list;
   }
