@@ -37,6 +37,8 @@ class Html extends Component {
         <title>{this.props.title}</title>
         <meta name="description" content={this.props.description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-signin-client_id" content="840821061060-afur3pd99oahbiivv2acah3vt6md29ud.apps.googleusercontent.com" />
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
         <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <link
           rel="stylesheet"

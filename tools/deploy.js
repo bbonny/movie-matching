@@ -15,8 +15,8 @@ import fetch from './lib/fetch';
 // For more information visit http://gitolite.com/deploy.html
 const getRemote = (slot) => ({
   name: slot ? slot : 'production',
-  url: `git@github.com:bbonny/guess-price-front-build.git`,
-  website: `http://guess-price.herokuapp.com`,
+  url: `git@github.com:bbonny/movie-matching-build.git`,
+  website: `http://movie-matching.herokuapp.com`,
 });
 
 /**
