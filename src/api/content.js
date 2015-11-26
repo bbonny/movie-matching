@@ -31,12 +31,16 @@ router.get('/', async (req, res, next) => {
 
     if (path == "ss") {
       const q = req.query.q;
+      var products = []
       var response = await http.get(
         `http://www.senscritique.com/sc/search/autocomplete.json?query=${q}`,
         {'X-Requested-With': 'XMLHttpRequest'}
       );
-
-      res.status(200).send(response);
+      for (var product of response.json) {
+        product.id = product['url'].substring(product.url.lastIndexOf('/') + 1);
+        products.push(product);
+      }
+      res.status(200).send(products);
       return;
     }
 

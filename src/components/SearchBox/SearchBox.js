@@ -23,7 +23,7 @@ class SearchBox extends Component {
       `/api/content?path=ss&q=${q}`,
       (results) => {
         this.setState({
-          results: results.json
+          results: results
         });
       }
     );
