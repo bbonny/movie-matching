@@ -31,11 +31,12 @@ router.get('/', async (req, res, next) => {
 
     if (path == "ss") {
       const q = req.query.q;
-      const content = await http.get(
+      var response = await http.get(
         `http://www.senscritique.com/sc/search/autocomplete.json?query=${q}`,
         {'X-Requested-With': 'XMLHttpRequest'}
       );
-      res.status(200).send(content);
+
+      res.status(200).send(response);
       return;
     }
 
