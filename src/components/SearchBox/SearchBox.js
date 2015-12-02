@@ -9,7 +9,6 @@ import withStyles from '../../decorators/withStyles';
 import Link from '../Link';
 import SCSmallEntry from '../SCSmallEntry';
 
-@withStyles(styles)
 class SearchBox extends Component {
   static getInitialState() {
     return {
@@ -52,8 +51,8 @@ class SearchBox extends Component {
     return (
       <div className="SearchBox">
         <Row className="show-grid">
-          <Col xs={3} md={4}></Col>
-          <Col xs={6} md={4}>
+          <Col xs={3} md={3}></Col>
+          <Col xs={6} md={6}>
             <Input
               type="text"
               placeholder="Enter text"
@@ -63,14 +62,12 @@ class SearchBox extends Component {
               labelClassName="label-class"
               onChange={this.handleChange} />
           </Col>
-          <Col xs={3} md={4}></Col>
         </Row>
         <Row>
-          <Col xs={4} md={5}></Col>
-          <Col xs={5} md={3}>
+          <Col xs={3} md={3}></Col>
+          <Col xs={6} md={6}>
             {results}
           </Col>
-          <Col xs={3} md={2}></Col>
         </Row>
       </div>
     );

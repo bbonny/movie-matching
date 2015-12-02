@@ -1,7 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 import DropdownButton from 'react-bootstrap/lib/DropdownButton';
 import MenuItem from 'react-bootstrap/lib/MenuItem';
-import Button from 'react-bootstrap/lib/Button';
 
 class GoogleSigninButton extends Component {
 
