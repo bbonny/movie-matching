@@ -2,6 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import withContext from '../../decorators/withContext';
 import Header from '../Header';
 import SearchBox from '../SearchBox';
+import WhishList from '../WhishList';
 
 @withContext
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       <div>
         <Header />
         <SearchBox />
+        <WhishList />
       </div>
     )
   }

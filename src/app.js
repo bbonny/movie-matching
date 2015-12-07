@@ -1,5 +1,3 @@
-/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 import 'babel-core/polyfill';
 import ReactDOM from 'react-dom';
 import FastClick from 'fastclick';
